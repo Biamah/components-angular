@@ -1,0 +1,21 @@
+<details #dropdownDetails (toggle)="onToggle(dropdownDetails)" class="dropdown">
+  <summary (click)="onSummaryClick($event)">
+    {{ selectedLabel }}
+  </summary>
+  <ul role="listbox">
+    <li
+      *ngFor="let option of options"
+      [class.disabled]="option.disabled"
+      [class.selected]="option.value === selectedValue"
+    >
+      <a
+        href="#"
+        (click)="selectOption(option, dropdownDetails); $event.preventDefault();"
+        [attr.aria-disabled]="option.disabled ? true : null"
+        style="cursor: pointer;"
+      >
+        {{ option.label }}
+      </a>
+    </li>
+  </ul>
+</details>
