@@ -55,13 +55,11 @@ describe('Dropdown', () => {
     expect(component.selectedValueChange.emit).toHaveBeenCalledWith(1);
   });
 
-  it('deve alternar a visibilidade ao clicar no botão', () => {
-    setOptions();
-    const details = fixture.debugElement.query(By.css(DROPDOWN_SELECTOR));
-    (details.nativeElement as HTMLDetailsElement).open = true;
-    fixture.detectChanges();
-
-    const listItem = details.nativeElement.querySelectorAll(ITEM_SELECTOR);
-    expect(listItem.length).toBeGreaterThan(0);
+  it('deve alternar a visibilidade ao chamar toggleDropdown', () => {
+    expect(component.isOpen).toBe(false);
+    component.toggleDropdown();
+    expect(component.isOpen).toBe(true);
+    component.toggleDropdown();
+    expect(component.isOpen).toBe(false);
   });
 });
