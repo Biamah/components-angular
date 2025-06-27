@@ -8,7 +8,6 @@ describe('Dropdown', () => {
   let fixture: ComponentFixture<Dropdown>;
 
   const DROPDOWN = '.dropdown';
-  const DROPDOWN_SELECTOR = 'details.dropdown';
   const ITEM_SELECTOR = 'li';
 
   function setOptions(
